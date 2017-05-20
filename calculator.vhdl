@@ -12,7 +12,7 @@ entity calculator is
     CLK : in std_logic;
 	 BTN : in std_logic;
 	 ANODES: out std_logic_vector(3 downto 0);
-	 SSD: out std_logic_vector(6 downto 0)
+	 SSD: out std_logic_vector(7 downto 0)
 	 --DEBUG_LED: out std_logic
   );
 end entity calculator;
@@ -71,7 +71,7 @@ architecture structural of calculator is
 	end component;
 	component BCD_decoder is port(
 		BCD : in  STD_LOGIC_VECTOR (3 downto 0);
-      SSD : out  STD_LOGIC_VECTOR (6 downto 0)
+      SSD : out  STD_LOGIC_VECTOR (7 downto 0)
 	);
 	end component;
 

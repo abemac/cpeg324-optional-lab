@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: calculator.prj
@@ -127,8 +127,7 @@ Architecture behavioral of Entity mod_4_counter is up to date.
 Compiling vhdl file "/home/abraham/Desktop/test/calculator/BCD_decoder.vhd" in Library work.
 Architecture behavioral of Entity bcd_decoder is up to date.
 Compiling vhdl file "/home/abraham/Desktop/test/calculator/calculator.vhdl" in Library work.
-Entity <calculator> compiled.
-Entity <calculator> (Architecture <structural>) compiled.
+Architecture structural of Entity calculator is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -258,7 +257,7 @@ Unit <MOD_4_counter> synthesized.
 
 Synthesizing Unit <BCD_decoder>.
     Related source file is "/home/abraham/Desktop/test/calculator/BCD_decoder.vhd".
-    Found 16x7-bit ROM for signal <SSD>.
+    Found 16x8-bit ROM for signal <SSD>.
     Summary:
 	inferred   1 ROM(s).
 Unit <BCD_decoder> synthesized.
@@ -356,7 +355,7 @@ HDL Synthesis Report
 
 Macro Statistics
 # ROMs                                                 : 1
- 16x7-bit ROM                                          : 1
+ 16x8-bit ROM                                          : 1
 # Adders/Subtractors                                   : 8
  4-bit adder                                           : 7
  9-bit adder                                           : 1
@@ -398,7 +397,7 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # ROMs                                                 : 1
- 16x7-bit ROM                                          : 1
+ 16x8-bit ROM                                          : 1
 # Adders/Subtractors                                   : 8
  4-bit adder                                           : 7
  9-bit adder                                           : 1
@@ -486,7 +485,7 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 21
+# IOs                              : 22
 
 Cell Usage :
 # BELS                             : 348
@@ -514,9 +513,9 @@ Cell Usage :
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 20
+# IO Buffers                       : 21
 #      IBUF                        : 9
-#      OBUF                        : 11
+#      OBUF                        : 12
 =========================================================================
 
 Device utilization summary:
@@ -527,8 +526,8 @@ Selected Device : 3s100ecp132-4
  Number of Slices:                      121  out of    960    12%  
  Number of Slice Flip Flops:             97  out of   1920     5%  
  Number of 4 input LUTs:                229  out of   1920    11%  
- Number of IOs:                          21
- Number of bonded IOBs:                  21  out of     83    25%  
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of     83    26%  
  Number of GCLKs:                         2  out of     24     8%  
 
 ---------------------------
@@ -793,18 +792,18 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'FiftyMHzTO1500Hz/CLK2'
 -------------------------------------------------------------------------
 Offset:              8.070ns (Levels of Logic = 4)
   Source:            selector/count_0 (FF)
-  Destination:       SSD<6> (PAD)
+  Destination:       SSD<7> (PAD)
   Source Clock:      FiftyMHzTO1500Hz/CLK2 rising
 
-  Data Path: selector/count_0 to SSD<6>
+  Data Path: selector/count_0 to SSD<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q             14   0.591   1.175  selector/count_0 (selector/count_0)
      LUT3:I0->O            1   0.704   0.000  Mmux_thisBCD_3 (Mmux_thisBCD_3)
      MUXF5:I1->O           7   0.321   0.883  Mmux_thisBCD_2_f5 (thisBCD<0>)
-     LUT4:I0->O            1   0.704   0.420  BCDtoSSD/Mrom_SSD21 (SSD_2_OBUF)
-     OBUF:I->O                 3.272          SSD_2_OBUF (SSD<2>)
+     LUT4:I0->O            1   0.704   0.420  BCDtoSSD/Mrom_SSD31 (SSD_3_OBUF)
+     OBUF:I->O                 3.272          SSD_3_OBUF (SSD<3>)
     ----------------------------------------
     Total                      8.070ns (5.592ns logic, 2.478ns route)
                                        (69.3% logic, 30.7% route)
@@ -815,18 +814,18 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'filtered_clk1'
 -------------------------------------------------------------------------
 Offset:              7.505ns (Levels of Logic = 4)
   Source:            msd2_1 (FF)
-  Destination:       SSD<5> (PAD)
+  Destination:       SSD<6> (PAD)
   Source Clock:      filtered_clk1 rising
 
-  Data Path: msd2_1 to SSD<5>
+  Data Path: msd2_1 to SSD<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDE:C->Q              3   0.591   0.610  msd2_1 (msd2_1)
      LUT2:I1->O            1   0.704   0.000  Mmux_thisBCD61 (Mmux_thisBCD6)
      MUXF5:I1->O           7   0.321   0.883  Mmux_thisBCD6_f5 (thisBCD<3>)
-     LUT4:I0->O            1   0.704   0.420  BCDtoSSD/Mrom_SSD41 (SSD_4_OBUF)
-     OBUF:I->O                 3.272          SSD_4_OBUF (SSD<4>)
+     LUT4:I0->O            1   0.704   0.420  BCDtoSSD/Mrom_SSD51 (SSD_5_OBUF)
+     OBUF:I->O                 3.272          SSD_5_OBUF (SSD<5>)
     ----------------------------------------
     Total                      7.505ns (5.592ns logic, 1.913ns route)
                                        (74.5% logic, 25.5% route)
@@ -834,13 +833,13 @@ Offset:              7.505ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 18.60 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.26 secs
  
 --> 
 
 
-Total memory usage is 520484 kilobytes
+Total memory usage is 520480 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)
