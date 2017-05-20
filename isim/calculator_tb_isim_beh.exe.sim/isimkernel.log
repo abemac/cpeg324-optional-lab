@@ -1,6 +1,0 @@
-Command line:
-   calculator_tb_isim_beh.exe
-     -simmode  gui
-     -simrunnum  0
-     -socket  51369
-

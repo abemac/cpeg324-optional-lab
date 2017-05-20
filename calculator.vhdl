@@ -79,10 +79,10 @@ signal filtered_clk, WE, display, WD_sel, trigger, cmp_out : std_logic;
 signal RA, RB, RW : std_logic_vector(1 downto 0);
 signal WD, RA_data, RB_data, sign_ext_imm, ALU_out: std_logic_vector(7 downto 0);
 
-SIGNAL lsd : std_logic_vector(3 downto 0) := "0110";
-SIGNAL lsd2 : std_logic_vector(3 downto 0 ) := "0101";
-SIGNAL msd2 : std_logic_vector(3 downto 0) :="0100";
-SIGNAL msd : std_logic_vector(3 downto 0) :="0011";
+SIGNAL lsd : std_logic_vector(3 downto 0) := "1110";
+SIGNAL lsd2 : std_logic_vector(3 downto 0 ) := "1110";
+SIGNAL msd2 : std_logic_vector(3 downto 0) :="1110";
+SIGNAL msd : std_logic_vector(3 downto 0) :="0000";
 SIGNAL thisBCD : std_logic_vector(3 downto 0);
 
 SIGNAL CLK_1500_Hz : std_logic :='0';

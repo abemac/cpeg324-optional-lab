@@ -4,32 +4,14 @@ Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Parsing VHDL file "/home/abraham/Desktop/test/calculator/reg_file.vhdl" into library work
+Parsing VHDL file "/home/abraham/Desktop/test/calculator/MOD_4_counter.vhd" into library work
+Parsing VHDL file "/home/abraham/Desktop/test/calculator/MOD_32768_counter.vhd" into library work
+Parsing VHDL file "/home/abraham/Desktop/test/calculator/debouncer.vhd" into library work
 Parsing VHDL file "/home/abraham/Desktop/test/calculator/clk_filter.vhdl" into library work
+Parsing VHDL file "/home/abraham/Desktop/test/calculator/BCD_decoder.vhd" into library work
 Parsing VHDL file "/home/abraham/Desktop/test/calculator/addsub_8bit.vhdl" into library work
 Parsing VHDL file "/home/abraham/Desktop/test/calculator/calculator.vhdl" into library work
 Parsing VHDL file "/home/abraham/Desktop/test/calculator/calculator_tb.vhdl" into library work
 Starting static elaboration
-Completed static elaboration
-Fuse Memory Usage: 97012 KB
-Fuse CPU Usage: 4060 ms
-Compiling package standard
-Compiling package std_logic_1164
-Compiling package textio
-Compiling package numeric_std
-Compiling architecture behavioral of entity reg_file [reg_file_default]
-Compiling architecture behavioral of entity half_adder [half_adder_default]
-Compiling architecture structural of entity full_adder [full_adder_default]
-Compiling architecture structural of entity adder_8bit [adder_8bit_default]
-Compiling architecture structural of entity addsub_8bit [addsub_8bit_default]
-Compiling architecture behavioral of entity dff [dff_default]
-Compiling architecture behavioral of entity dl [dl_default]
-Compiling architecture structural of entity clk_filter [clk_filter_default]
-Compiling architecture structural of entity calculator [calculator_default]
-Compiling architecture structural of entity calculator_tb
-Time Resolution for simulation is 1ps.
-Waiting for 5 sub-compilation(s) to finish...
-Compiled 23 VHDL Units
-Built simulation executable /home/abraham/Desktop/test/calculator/calculator_tb_isim_beh.exe
-Fuse Memory Usage: 670916 KB
-Fuse CPU Usage: 4350 ms
-GCC CPU Usage: 5120 ms
+ERROR:HDLCompiler:432 - "/home/abraham/Desktop/test/calculator/calculator.vhdl" Line 13: Formal <btn> has no actual or default value.
+ERROR:Simulator:777 - Static elaboration of top level VHDL design unit calculator_tb in library work failed
