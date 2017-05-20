@@ -1,12 +1,11 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat May 20 04:42:17 2017
+// Written by: Map P.20131013 on Sat May 20 05:50:34 2017
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "BTN" LOCATE = SITE "G12" LEVEL 1;
 PIN BTN_pin<0> = BEL "BTN" PINNAME PAD;
 PIN "BTN_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
-COMP "DEBUG_LED" LOCATE = SITE "M5" LEVEL 1;
 COMP "ANODES<0>" LOCATE = SITE "F12" LEVEL 1;
 COMP "ANODES<1>" LOCATE = SITE "J12" LEVEL 1;
 COMP "ANODES<2>" LOCATE = SITE "M13" LEVEL 1;

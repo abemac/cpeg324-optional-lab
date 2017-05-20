@@ -39,7 +39,7 @@ signal Q3 : std_logic := '1';
 begin
   dff0 : dff port map(clk_in, Q3, '1', Q0);
   dff1 : dff port map(clk_in, Q4, Q0, Q1);
-  dff2 : dff port map(clk_in, '0', Q1, Q2);
+  dff2 : dff port map(clk_in, Q4, Q1, Q2);--q4 was '0' previously
   dl0 : dl port map(clk_in, D3, Q3);
   dl1 : dl port map(clk_in, D4, Q4);
 

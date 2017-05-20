@@ -1,85 +1,85 @@
 V3 46
 FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl 2017/05/20.04:41:11 P.20131013
-EN work/addsub_8bit 1495269698 \
+EN work/addsub_8bit 1495273795 \
       FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/addsub_8bit/structural 1495269699 \
+AR work/addsub_8bit/structural 1495273796 \
       FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
-      EN work/addsub_8bit 1495269698 CP adder_8bit
-EN work/adder_8bit 1495269700 \
-      FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
-      PB ieee/std_logic_1164 1381692176
-AR work/adder_8bit/structural 1495269701 \
-      FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
-      EN work/adder_8bit 1495269700 CP full_adder
-EN work/full_adder 1495269702 \
+      EN work/addsub_8bit 1495273795 CP adder_8bit
+EN work/adder_8bit 1495273797 \
       FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/full_adder/structural 1495269703 \
+AR work/adder_8bit/structural 1495273798 \
       FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
-      EN work/full_adder 1495269702 CP half_adder
-EN work/half_adder 1495269704 \
+      EN work/adder_8bit 1495273797 CP full_adder
+EN work/full_adder 1495273799 \
       FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/half_adder/behavioral 1495269705 \
+AR work/full_adder/structural 1495273800 \
       FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
-      EN work/half_adder 1495269704
+      EN work/full_adder 1495273799 CP half_adder
+EN work/half_adder 1495273801 \
+      FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
+      PB ieee/std_logic_1164 1381692176
+AR work/half_adder/behavioral 1495273802 \
+      FL /home/abraham/Desktop/test/calculator/addsub_8bit.vhdl \
+      EN work/half_adder 1495273801
 FL /home/abraham/Desktop/test/calculator/BCD_decoder.vhd 2017/05/20.02:53:20 P.20131013
-EN work/BCD_decoder 1495269718 \
+EN work/BCD_decoder 1495273815 \
       FL /home/abraham/Desktop/test/calculator/BCD_decoder.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/BCD_decoder/Behavioral 1495269719 \
+AR work/BCD_decoder/Behavioral 1495273816 \
       FL /home/abraham/Desktop/test/calculator/BCD_decoder.vhd \
-      EN work/BCD_decoder 1495269718
-FL /home/abraham/Desktop/test/calculator/calculator.vhdl 2017/05/20.04:41:26 P.20131013
-EN work/calculator 1495269720 \
+      EN work/BCD_decoder 1495273815
+FL /home/abraham/Desktop/test/calculator/calculator.vhdl 2017/05/20.05:49:40 P.20131013
+EN work/calculator 1495273817 \
       FL /home/abraham/Desktop/test/calculator/calculator.vhdl \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/calculator/structural 1495269721 \
-      FL /home/abraham/Desktop/test/calculator/calculator.vhdl EN work/calculator 1495269720 \
+AR work/calculator/structural 1495273818 \
+      FL /home/abraham/Desktop/test/calculator/calculator.vhdl EN work/calculator 1495273817 \
       CP reg_file CP addsub_8bit CP clk_filter CP Debounce CP MOD_32768_divider \
       CP MOD_4_counter CP BCD_decoder
-FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl 2017/05/02.15:40:50 P.20131013
-EN work/clk_filter 1495269706 \
+FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl 2017/05/20.05:44:04 P.20131013
+EN work/clk_filter 1495273803 \
       FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/clk_filter/structural 1495269707 \
-      FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl EN work/clk_filter 1495269706 \
+AR work/clk_filter/structural 1495273804 \
+      FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl EN work/clk_filter 1495273803 \
       CP dff CP dl
-EN work/dff 1495269708 \
+EN work/dff 1495273805 \
       FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/dff/behavioral 1495269709 \
-      FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl EN work/dff 1495269708
-EN work/dl 1495269710 \
+AR work/dff/behavioral 1495273806 \
+      FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl EN work/dff 1495273805
+EN work/dl 1495273807 \
       FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/dl/behavioral 1495269711 \
-      FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl EN work/dl 1495269710
+AR work/dl/behavioral 1495273808 \
+      FL /home/abraham/Desktop/test/calculator/clk_filter.vhdl EN work/dl 1495273807
 FL /home/abraham/Desktop/test/calculator/debouncer.vhd 2017/05/20.03:03:14 P.20131013
-EN work/Debounce 1495269712 \
+EN work/Debounce 1495273809 \
       FL /home/abraham/Desktop/test/calculator/debouncer.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/Debounce/Behavioral 1495269713 \
-      FL /home/abraham/Desktop/test/calculator/debouncer.vhd EN work/Debounce 1495269712
+AR work/Debounce/Behavioral 1495273810 \
+      FL /home/abraham/Desktop/test/calculator/debouncer.vhd EN work/Debounce 1495273809
 FL /home/abraham/Desktop/test/calculator/MOD_32768_counter.vhd 2015/05/14.18:38:57 P.20131013
-EN work/MOD_32768_divider 1495269714 \
+EN work/MOD_32768_divider 1495273811 \
       FL /home/abraham/Desktop/test/calculator/MOD_32768_counter.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/MOD_32768_divider/Behavioral 1495269715 \
+AR work/MOD_32768_divider/Behavioral 1495273812 \
       FL /home/abraham/Desktop/test/calculator/MOD_32768_counter.vhd \
-      EN work/MOD_32768_divider 1495269714
+      EN work/MOD_32768_divider 1495273811
 FL /home/abraham/Desktop/test/calculator/MOD_4_counter.vhd 2015/05/11.10:24:50 P.20131013
-EN work/MOD_4_counter 1495269716 \
+EN work/MOD_4_counter 1495273813 \
       FL /home/abraham/Desktop/test/calculator/MOD_4_counter.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/MOD_4_counter/Behavioral 1495269717 \
+AR work/MOD_4_counter/Behavioral 1495273814 \
       FL /home/abraham/Desktop/test/calculator/MOD_4_counter.vhd \
-      EN work/MOD_4_counter 1495269716
+      EN work/MOD_4_counter 1495273813
 FL /home/abraham/Desktop/test/calculator/reg_file.vhdl 2017/05/02.15:40:50 P.20131013
-EN work/reg_file 1495269696 \
+EN work/reg_file 1495273793 \
       FL /home/abraham/Desktop/test/calculator/reg_file.vhdl \
       PB ieee/std_logic_1164 1381692176
-AR work/reg_file/behavioral 1495269697 \
-      FL /home/abraham/Desktop/test/calculator/reg_file.vhdl EN work/reg_file 1495269696
+AR work/reg_file/behavioral 1495273794 \
+      FL /home/abraham/Desktop/test/calculator/reg_file.vhdl EN work/reg_file 1495273793

@@ -12,8 +12,8 @@ entity calculator is
     CLK : in std_logic;
 	 BTN : in std_logic;
 	 ANODES: out std_logic_vector(3 downto 0);
-	 SSD: out std_logic_vector(6 downto 0);
-	 DEBUG_LED: out std_logic
+	 SSD: out std_logic_vector(6 downto 0)
+	 --DEBUG_LED: out std_logic
   );
 end entity calculator;
 
@@ -79,10 +79,10 @@ signal filtered_clk, WE, display, WD_sel, trigger, cmp_out : std_logic;
 signal RA, RB, RW : std_logic_vector(1 downto 0);
 signal WD, RA_data, RB_data, sign_ext_imm, ALU_out: std_logic_vector(7 downto 0);
 
-SIGNAL lsd : std_logic_vector(3 downto 0) := "1110";
+SIGNAL lsd : std_logic_vector(3 downto 0) := "0000";
 SIGNAL lsd2 : std_logic_vector(3 downto 0 ) := "1110";
 SIGNAL msd2 : std_logic_vector(3 downto 0) :="1110";
-SIGNAL msd : std_logic_vector(3 downto 0) :="0000";
+SIGNAL msd : std_logic_vector(3 downto 0) :="1110";
 SIGNAL thisBCD : std_logic_vector(3 downto 0);
 
 SIGNAL CLK_1500_Hz : std_logic :='0';
@@ -94,7 +94,7 @@ begin
   ALU: addsub_8bit port map(RA_data, RB_data, I(7), ALU_out);
   clk_filter_0 : clk_filter port map(debounced_btn, filtered_clk, I(4), trigger);
   debouncer : Debounce port map(CLK,BTN,debounced_btn);
-  DEBUG_LED<=filtered_clk;
+  --DEBUG_LED<=filtered_clk;
 	FiftyMHzTO1500Hz : MOD_32768_divider port map(
 		CLK => CLK,
 		CLK2=>CLK_1500_Hz
