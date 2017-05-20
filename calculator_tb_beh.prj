@@ -1,0 +1,5 @@
+vhdl work "reg_file.vhdl"
+vhdl work "clk_filter.vhdl"
+vhdl work "addsub_8bit.vhdl"
+vhdl work "calculator.vhdl"
+vhdl work "calculator_tb.vhdl"

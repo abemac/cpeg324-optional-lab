@@ -1,0 +1,5 @@
+vhdl isim_temp "reg_file.vhdl"
+vhdl isim_temp "clk_filter.vhdl"
+vhdl isim_temp "addsub_8bit.vhdl"
+vhdl isim_temp "calculator.vhdl"
+vhdl isim_temp "calculator_tb.vhdl"
