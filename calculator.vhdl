@@ -176,18 +176,18 @@ begin
 	variable ones :std_logic_vector(3 downto 0);
 	variable tens :std_logic_vector(3 downto 0);
 	variable hundreds :std_logic_vector(3 downto 0);
-	variable bcd : UNSIGNED (11 downto 0) := (others => '0');
-	variable temp : STD_LOGIC_VECTOR (7 downto 0);
+	variable bcd : UNSIGNED (15 downto 0) := (others => '0');
+	variable temp : STD_LOGIC_VECTOR (11 downto 0);
     begin
       if((filtered_clk'event and filtered_clk = '1') and (display = '1')) then
 			 int_val := to_integer(signed(RA_data));
 			 bcd := (others => '0');
 			 if(int_val>=0) then
-				temp(7 downto 0):=std_logic_vector(to_unsigned(int_val,8));
+				temp(11 downto 0):=std_logic_vector(to_unsigned(int_val,12));
 			 else
-				temp(7 downto 0):=std_logic_vector(to_unsigned(-int_val,8));
+				temp(11 downto 0):=std_logic_vector(to_unsigned(-int_val,12));
 			 end if;
-			 for i in 0 to 7 loop
+			 for i in 0 to 11 loop
 				if bcd(3 downto 0) > 4 then 
 				  bcd(3 downto 0) := bcd(3 downto 0) + 3;
 				end if;
@@ -197,8 +197,8 @@ begin
 				if bcd(11 downto 8) > 4 then  
 				  bcd(11 downto 8) := bcd(11 downto 8) + 3;
 				end if;
-				bcd := bcd(10 downto 0) & temp(7);
-				temp := temp(6 downto 0) & '0';
+				bcd := bcd(14 downto 0) & temp(11);
+				temp := temp(10 downto 0) & '0';
 			 end loop;
 		 
 			 ones:=std_logic_vector(bcd(3 downto 0));

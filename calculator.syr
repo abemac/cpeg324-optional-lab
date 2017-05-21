@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 Reading design: calculator.prj
@@ -71,7 +71,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -127,7 +127,8 @@ Architecture behavioral of Entity mod_4_counter is up to date.
 Compiling vhdl file "/home/abraham/Desktop/test/calculator/BCD_decoder.vhd" in Library work.
 Architecture behavioral of Entity bcd_decoder is up to date.
 Compiling vhdl file "/home/abraham/Desktop/test/calculator/calculator.vhdl" in Library work.
-Architecture structural of Entity calculator is up to date.
+Entity <calculator> compiled.
+Entity <calculator> (Architecture <structural>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -163,7 +164,6 @@ Analyzing hierarchy for entity <half_adder> in library <work> (architecture <beh
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <calculator> in library <work> (Architecture <structural>).
-WARNING:Xst:1610 - "/home/abraham/Desktop/test/calculator/calculator.vhdl" line 188: Width mismatch. <temp> has a width of 8 bits but assigned expression is 9-bit wide.
 Entity <calculator> analyzed. Unit <calculator> generated.
 
 Analyzing Entity <reg_file> in library <work> (Architecture <behavioral>).
@@ -308,20 +308,42 @@ Synthesizing Unit <calculator>.
 WARNING:Xst:653 - Signal <off> is used but never assigned. This sourceless signal will be automatically connected to value 1110.
 WARNING:Xst:653 - Signal <neg_sign> is used but never assigned. This sourceless signal will be automatically connected to value 1111.
     Found 1-of-4 decoder for signal <ANODES>.
+    Found 4-bit comparator greater for signal <bcd_10$cmp_gt0000> created at line 197.
+    Found 4-bit comparator greater for signal <bcd_10$cmp_gt0001> created at line 197.
+    Found 4-bit comparator greater for signal <bcd_10$cmp_gt0002> created at line 197.
+    Found 4-bit adder for signal <bcd_11_8$add0000> created at line 198.
+    Found 4-bit adder for signal <bcd_11_8$add0001> created at line 198.
+    Found 4-bit adder for signal <bcd_11_8$add0002> created at line 198.
     Found 4-bit comparator greater for signal <bcd_3$cmp_gt0000> created at line 191.
     Found 4-bit comparator greater for signal <bcd_3$cmp_gt0001> created at line 191.
     Found 4-bit comparator greater for signal <bcd_3$cmp_gt0002> created at line 191.
     Found 4-bit comparator greater for signal <bcd_3$cmp_gt0003> created at line 191.
     Found 4-bit comparator greater for signal <bcd_3$cmp_gt0004> created at line 191.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0005> created at line 191.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0006> created at line 191.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0007> created at line 191.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0008> created at line 191.
     Found 4-bit adder for signal <bcd_3_0$add0000> created at line 192.
     Found 4-bit adder for signal <bcd_3_0$add0001> created at line 192.
     Found 4-bit adder for signal <bcd_3_0$add0002> created at line 192.
     Found 4-bit adder for signal <bcd_3_0$add0003> created at line 192.
     Found 4-bit adder for signal <bcd_3_0$add0004> created at line 192.
+    Found 4-bit adder for signal <bcd_3_0$add0005> created at line 192.
+    Found 4-bit adder for signal <bcd_3_0$add0006> created at line 192.
+    Found 4-bit adder for signal <bcd_3_0$add0007> created at line 192.
+    Found 4-bit adder for signal <bcd_3_0$add0008> created at line 192.
     Found 4-bit comparator greater for signal <bcd_7$cmp_gt0000> created at line 194.
     Found 4-bit comparator greater for signal <bcd_7$cmp_gt0001> created at line 194.
+    Found 4-bit comparator greater for signal <bcd_7$cmp_gt0002> created at line 194.
+    Found 4-bit comparator greater for signal <bcd_7$cmp_gt0003> created at line 194.
+    Found 4-bit comparator greater for signal <bcd_7$cmp_gt0004> created at line 194.
+    Found 4-bit comparator greater for signal <bcd_7$cmp_gt0005> created at line 194.
     Found 4-bit adder for signal <bcd_7_4$add0000> created at line 195.
     Found 4-bit adder for signal <bcd_7_4$add0001> created at line 195.
+    Found 4-bit adder for signal <bcd_7_4$add0002> created at line 195.
+    Found 4-bit adder for signal <bcd_7_4$add0003> created at line 195.
+    Found 4-bit adder for signal <bcd_7_4$add0004> created at line 195.
+    Found 4-bit adder for signal <bcd_7_4$add0005> created at line 195.
     Found 1-bit xor2 for signal <cmp_out$xor0000>.
     Found 1-bit xor2 for signal <cmp_out$xor0001>.
     Found 1-bit xor2 for signal <cmp_out$xor0002>.
@@ -338,13 +360,13 @@ WARNING:Xst:653 - Signal <neg_sign> is used but never assigned. This sourceless 
     Found 8-bit comparator greater for signal <msd2$cmp_gt0001> created at line 230.
     Found 8-bit comparator less for signal <msd2$cmp_lt0000> created at line 209.
     Found 8-bit comparator less for signal <msd2$cmp_lt0001> created at line 213.
-    Found 9-bit adder for signal <temp$addsub0000> created at line 188.
     Found 8-bit comparator greatequal for signal <temp$cmp_ge0000> created at line 185.
+    Found 9-bit adder for signal <temp$sub0000> created at line 188.
     Found 4-bit 4-to-1 multiplexer for signal <thisBCD>.
     Summary:
 	inferred  16 D-type flip-flop(s).
-	inferred   8 Adder/Subtractor(s).
-	inferred  12 Comparator(s).
+	inferred  19 Adder/Subtractor(s).
+	inferred  23 Comparator(s).
 	inferred   4 Multiplexer(s).
 	inferred   1 Decoder(s).
 Unit <calculator> synthesized.
@@ -356,8 +378,8 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  16x8-bit ROM                                          : 1
-# Adders/Subtractors                                   : 8
- 4-bit adder                                           : 7
+# Adders/Subtractors                                   : 19
+ 4-bit adder                                           : 18
  9-bit adder                                           : 1
 # Counters                                             : 3
  15-bit up counter                                     : 1
@@ -369,8 +391,8 @@ Macro Statistics
  8-bit register                                        : 4
 # Latches                                              : 2
  1-bit latch                                           : 2
-# Comparators                                          : 12
- 4-bit comparator greater                              : 7
+# Comparators                                          : 23
+ 4-bit comparator greater                              : 18
  8-bit comparator greatequal                           : 1
  8-bit comparator greater                              : 2
  8-bit comparator less                                 : 2
@@ -398,8 +420,9 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  16x8-bit ROM                                          : 1
-# Adders/Subtractors                                   : 8
- 4-bit adder                                           : 7
+# Adders/Subtractors                                   : 19
+ 3-bit adder                                           : 3
+ 4-bit adder                                           : 15
  9-bit adder                                           : 1
 # Counters                                             : 3
  15-bit up counter                                     : 1
@@ -409,8 +432,8 @@ Macro Statistics
  Flip-Flops                                            : 56
 # Latches                                              : 2
  1-bit latch                                           : 2
-# Comparators                                          : 12
- 4-bit comparator greater                              : 7
+# Comparators                                          : 23
+ 4-bit comparator greater                              : 18
  8-bit comparator greatequal                           : 1
  8-bit comparator greater                              : 2
  8-bit comparator less                                 : 2
@@ -430,13 +453,12 @@ Macro Statistics
 WARNING:Xst:1293 - FF/Latch <msd_1> has a constant value of 1 in block <calculator>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <msd_2> has a constant value of 1 in block <calculator>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <msd_3> has a constant value of 1 in block <calculator>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <msd2_2> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_3> 
 
 Optimizing unit <calculator> ...
-INFO:Xst:2261 - The FF/Latch <msd2_1> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_2> 
-INFO:Xst:2261 - The FF/Latch <msd2_1> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_2> 
-INFO:Xst:2261 - The FF/Latch <msd2_1> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_2> 
-INFO:Xst:2261 - The FF/Latch <msd2_1> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_2> 
+INFO:Xst:2261 - The FF/Latch <msd2_2> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_3> 
+INFO:Xst:2261 - The FF/Latch <msd2_2> in Unit <calculator> is equivalent to the following FF/Latch, which will be removed : <msd2_3> 
+INFO:Xst:2261 - The FF/Latch <msd2_1> in Unit <calculator> is equivalent to the following 2 FFs/Latches, which will be removed : <msd2_2> <msd2_3> 
+INFO:Xst:2261 - The FF/Latch <msd2_1> in Unit <calculator> is equivalent to the following 2 FFs/Latches, which will be removed : <msd2_2> <msd2_3> 
 
 Optimizing unit <reg_file> ...
 
@@ -450,7 +472,7 @@ Optimizing unit <addsub_8bit> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block calculator, actual ratio is 12.
+Found area constraint ratio of 100 (+ 5) on block calculator, actual ratio is 14.
 
 Final Macro Processing ...
 
@@ -488,20 +510,21 @@ Design Statistics
 # IOs                              : 22
 
 Cell Usage :
-# BELS                             : 348
+# BELS                             : 384
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 40
-#      LUT2                        : 12
-#      LUT2_L                      : 1
-#      LUT3                        : 58
-#      LUT3_D                      : 6
+#      LUT2                        : 14
+#      LUT2_D                      : 3
+#      LUT2_L                      : 3
+#      LUT3                        : 61
+#      LUT3_D                      : 5
 #      LUT3_L                      : 5
-#      LUT4                        : 88
+#      LUT4                        : 109
 #      LUT4_D                      : 9
-#      LUT4_L                      : 7
+#      LUT4_L                      : 10
 #      MUXCY                       : 47
-#      MUXF5                       : 28
+#      MUXF5                       : 31
 #      VCC                         : 1
 #      XORCY                       : 42
 # FlipFlops/Latches                : 97
@@ -523,9 +546,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-4 
 
- Number of Slices:                      121  out of    960    12%  
+ Number of Slices:                      138  out of    960    14%  
  Number of Slice Flip Flops:             97  out of   1920     5%  
- Number of 4 input LUTs:                229  out of   1920    11%  
+ Number of 4 input LUTs:                262  out of   1920    13%  
  Number of IOs:                          22
  Number of bonded IOBs:                  22  out of     83    26%  
  Number of GCLKs:                         2  out of     24     8%  
@@ -551,7 +574,7 @@ Clock Information:
 --------------------------------------+----------------------------+-------+
 Clock Signal                          | Clock buffer(FF name)      | Load  |
 --------------------------------------+----------------------------+-------+
-filtered_clk1(clk_filter_0/clk_out1:O)| BUFG(*)(lsd_0)             | 43    |
+filtered_clk1(clk_filter_0/clk_out1:O)| BUFG(*)(msd2_0)            | 43    |
 CLK                                   | BUFGP                      | 44    |
 FiftyMHzTO1500Hz/CLK2                 | NONE(selector/count_1)     | 2     |
 debouncer/f100hz                      | NONE(debouncer/Q3)         | 3     |
@@ -575,8 +598,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 11.930ns (Maximum Frequency: 83.822MHz)
-   Minimum input arrival time before clock: 16.565ns
+   Minimum period: 14.351ns (Maximum Frequency: 69.682MHz)
+   Minimum input arrival time before clock: 19.118ns
    Maximum output required time after clock: 8.070ns
    Maximum combinational path delay: No path found
 
@@ -586,33 +609,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'filtered_clk1'
-  Clock period: 11.930ns (frequency: 83.822MHz)
-  Total number of paths / destination ports: 15160 / 43
+  Clock period: 14.351ns (frequency: 69.682MHz)
+  Total number of paths / destination ports: 34032 / 43
 -------------------------------------------------------------------------
-Delay:               11.930ns (Levels of Logic = 9)
-  Source:            reg_file_0/R0_2 (FF)
-  Destination:       lsd_1 (FF)
+Delay:               14.351ns (Levels of Logic = 12)
+  Source:            reg_file_0/R0_0 (FF)
+  Destination:       lsd2_0 (FF)
   Source Clock:      filtered_clk1 rising
   Destination Clock: filtered_clk1 rising
 
-  Data Path: reg_file_0/R0_2 to lsd_1
+  Data Path: reg_file_0/R0_0 to lsd2_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.591   0.526  reg_file_0/R0_2 (reg_file_0/R0_2)
-     LUT3:I1->O            1   0.704   0.000  reg_file_0/mux2_2_f5_F (N115)
-     MUXF5:I0->O          10   0.321   1.057  reg_file_0/mux2_2_f5 (RA_data<2>)
-     LUT3:I0->O            4   0.704   0.591  Madd_temp_addsub0000_cy<2>11 (Madd_temp_addsub0000_cy<2>)
-     LUT4:I3->O           13   0.704   1.018  temp_mux0000<6>1 (Madd_bcd_3_0_add0001_lut<2>)
-     LUT4:I2->O            1   0.704   0.455  Madd_bcd_3_0_add0003_cy<1>11_SW2 (N93)
-     LUT3_D:I2->LO         1   0.704   0.104  Madd_bcd_3_0_add0003_cy<1>11 (N168)
-     LUT4:I3->O            8   0.704   0.761  bcd_3_mux000311 (N22)
-     LUT4:I3->O            3   0.704   0.531  bcd_3_mux000411 (N23)
-     MUXF5:S->O            1   0.739   0.000  lsd2_mux0003<0> (lsd2_mux0003<0>)
+     FDE:C->Q              2   0.591   0.526  reg_file_0/R0_0 (reg_file_0/R0_0)
+     LUT3:I1->O            1   0.704   0.000  reg_file_0/mux_2_f5_F (N130)
+     MUXF5:I0->O          14   0.321   1.175  reg_file_0/mux_2_f5 (Madd_temp_sub0000_lut<0>)
+     LUT4:I0->O           14   0.704   1.000  bcd_2_mux000511 (N6)
+     MUXF5:S->O           12   0.739   0.965  bcd_3_mux0005 (Madd_bcd_7_4_add0003_cy<0>)
+     LUT4_D:I3->O          3   0.704   0.535  bcd_2_mux0007311 (N34)
+     LUT4:I3->O            1   0.704   0.000  bcd_1_mux0006_f5_F (N140)
+     MUXF5:I0->O          12   0.321   0.965  bcd_1_mux0006_f5 (Madd_bcd_3_0_add0007_lut<2>)
+     LUT4_D:I3->LO         1   0.704   0.104  Madd_bcd_3_0_add0008_cy<2>1_SW1 (N183)
+     LUT4:I3->O            1   0.704   0.424  Madd_bcd_3_0_add0008_cy<2>1 (Madd_bcd_3_0_add0008_cy<2>)
+     LUT4:I3->O            1   0.704   0.000  lsd2_mux0003<0>34_SW0_G (N143)
+     MUXF5:I1->O           1   0.321   0.424  lsd2_mux0003<0>34_SW0 (N85)
+     LUT4:I3->O            1   0.704   0.000  lsd2_mux0003<0>50 (lsd2_mux0003<0>)
      FDE:D                     0.308          lsd2_0
     ----------------------------------------
-    Total                     11.930ns (6.887ns logic, 5.043ns route)
-                                       (57.7% logic, 42.3% route)
+    Total                     14.351ns (8.233ns logic, 6.118ns route)
+                                       (57.4% logic, 42.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
@@ -693,51 +719,54 @@ Timing constraint: Default period analysis for Clock 'debounced_btn'
 -------------------------------------------------------------------------
 Delay:               3.455ns (Levels of Logic = 2)
   Source:            clk_filter_0/dff2/qt (FF)
-  Destination:       clk_filter_0/dl0/t (LATCH)
+  Destination:       clk_filter_0/dl1/t (LATCH)
   Source Clock:      debounced_btn rising
   Destination Clock: debounced_btn falling
 
-  Data Path: clk_filter_0/dff2/qt to clk_filter_0/dl0/t
+  Data Path: clk_filter_0/dff2/qt to clk_filter_0/dl1/t
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              2   0.591   0.622  clk_filter_0/dff2/qt (clk_filter_0/dff2/qt)
-     LUT4:I0->O            2   0.704   0.526  clk_filter_0/D4169 (clk_filter_0/D4)
-     LUT2:I1->O            1   0.704   0.000  clk_filter_0/D31 (clk_filter_0/D3)
-     LD:D                      0.308          clk_filter_0/dl0/t
+     LUT4:I0->O            2   0.704   0.526  clk_filter_0/D442 (clk_filter_0/D442)
+     LUT3:I1->O            1   0.704   0.000  clk_filter_0/D4170 (clk_filter_0/D4)
+     LD:D                      0.308          clk_filter_0/dl1/t
     ----------------------------------------
     Total                      3.455ns (2.307ns logic, 1.148ns route)
                                        (66.8% logic, 33.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'filtered_clk1'
-  Total number of paths / destination ports: 46463 / 86
+  Total number of paths / destination ports: 117957 / 86
 -------------------------------------------------------------------------
-Offset:              16.565ns (Levels of Logic = 12)
+Offset:              19.118ns (Levels of Logic = 15)
   Source:            I<7> (PAD)
-  Destination:       lsd_1 (FF)
+  Destination:       lsd2_0 (FF)
   Destination Clock: filtered_clk1 rising
 
-  Data Path: I<7> to lsd_1
+  Data Path: I<7> to lsd2_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            26   1.218   1.295  I_7_IBUF (I_7_IBUF)
-     LUT3:I2->O            2   0.704   0.622  display_or00001 (display_or0000)
+     IBUF:I->O            24   1.218   1.427  I_7_IBUF (I_7_IBUF)
+     LUT3:I0->O            2   0.704   0.622  RA<0>11 (N14)
      LUT3:I0->O           16   0.704   1.209  RA<0>1 (RA<0>)
-     LUT3:I0->O            1   0.704   0.000  reg_file_0/mux2_2_f5_F (N115)
-     MUXF5:I0->O          10   0.321   1.057  reg_file_0/mux2_2_f5 (RA_data<2>)
-     LUT3:I0->O            4   0.704   0.591  Madd_temp_addsub0000_cy<2>11 (Madd_temp_addsub0000_cy<2>)
-     LUT4:I3->O           13   0.704   1.018  temp_mux0000<6>1 (Madd_bcd_3_0_add0001_lut<2>)
-     LUT4:I2->O            1   0.704   0.455  Madd_bcd_3_0_add0003_cy<1>11_SW2 (N93)
-     LUT3_D:I2->LO         1   0.704   0.104  Madd_bcd_3_0_add0003_cy<1>11 (N168)
-     LUT4:I3->O            8   0.704   0.761  bcd_3_mux000311 (N22)
-     LUT4:I3->O            3   0.704   0.531  bcd_3_mux000411 (N23)
-     MUXF5:S->O            1   0.739   0.000  lsd2_mux0003<0> (lsd2_mux0003<0>)
+     LUT3:I0->O            1   0.704   0.000  reg_file_0/mux_2_f5_F (N130)
+     MUXF5:I0->O          14   0.321   1.175  reg_file_0/mux_2_f5 (Madd_temp_sub0000_lut<0>)
+     LUT4:I0->O           14   0.704   1.000  bcd_2_mux000511 (N6)
+     MUXF5:S->O           12   0.739   0.965  bcd_3_mux0005 (Madd_bcd_7_4_add0003_cy<0>)
+     LUT4_D:I3->O          3   0.704   0.535  bcd_2_mux0007311 (N34)
+     LUT4:I3->O            1   0.704   0.000  bcd_1_mux0006_f5_F (N140)
+     MUXF5:I0->O          12   0.321   0.965  bcd_1_mux0006_f5 (Madd_bcd_3_0_add0007_lut<2>)
+     LUT4_D:I3->LO         1   0.704   0.104  Madd_bcd_3_0_add0008_cy<2>1_SW1 (N183)
+     LUT4:I3->O            1   0.704   0.424  Madd_bcd_3_0_add0008_cy<2>1 (Madd_bcd_3_0_add0008_cy<2>)
+     LUT4:I3->O            1   0.704   0.000  lsd2_mux0003<0>34_SW0_G (N143)
+     MUXF5:I1->O           1   0.321   0.424  lsd2_mux0003<0>34_SW0 (N85)
+     LUT4:I3->O            1   0.704   0.000  lsd2_mux0003<0>50 (lsd2_mux0003<0>)
      FDE:D                     0.308          lsd2_0
     ----------------------------------------
-    Total                     16.565ns (8.922ns logic, 7.643ns route)
-                                       (53.9% logic, 46.1% route)
+    Total                     19.118ns (10.268ns logic, 8.850ns route)
+                                       (53.7% logic, 46.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'debouncer/f100hz'
@@ -762,29 +791,27 @@ Offset:              1.946ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'debounced_btn'
   Total number of paths / destination ports: 295 / 2
 -------------------------------------------------------------------------
-Offset:              13.446ns (Levels of Logic = 10)
+Offset:              11.704ns (Levels of Logic = 8)
   Source:            I<7> (PAD)
-  Destination:       clk_filter_0/dl0/t (LATCH)
+  Destination:       clk_filter_0/dl1/t (LATCH)
   Destination Clock: debounced_btn falling
 
-  Data Path: I<7> to clk_filter_0/dl0/t
+  Data Path: I<7> to clk_filter_0/dl1/t
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            26   1.218   1.295  I_7_IBUF (I_7_IBUF)
-     LUT3:I2->O            2   0.704   0.622  display_or00001 (display_or0000)
+     IBUF:I->O            24   1.218   1.427  I_7_IBUF (I_7_IBUF)
+     LUT3:I0->O            2   0.704   0.622  RA<0>11 (N14)
      LUT3:I0->O           16   0.704   1.209  RA<0>1 (RA<0>)
-     LUT3:I0->O            1   0.704   0.000  reg_file_0/mux_2_f5_F (N119)
-     MUXF5:I0->O          11   0.321   1.012  reg_file_0/mux_2_f5 (Madd_temp_addsub0000_lut<0>)
-     LUT4:I1->O            1   0.704   0.455  clk_filter_0/D426 (clk_filter_0/D426)
-     LUT4:I2->O            1   0.704   0.424  clk_filter_0/D440_SW0 (N67)
-     LUT4:I3->O            1   0.704   0.424  clk_filter_0/D450_SW0 (N105)
-     LUT4:I3->O            2   0.704   0.526  clk_filter_0/D4169 (clk_filter_0/D4)
-     LUT2:I1->O            1   0.704   0.000  clk_filter_0/D31 (clk_filter_0/D3)
-     LD:D                      0.308          clk_filter_0/dl0/t
+     LUT3:I0->O            1   0.704   0.000  reg_file_0/mux7_2_f5_F (N118)
+     MUXF5:I0->O          33   0.321   1.438  reg_file_0/mux7_2_f5 (RA_data<7>)
+     LUT4:I0->O            1   0.704   0.455  clk_filter_0/D4144 (clk_filter_0/D4144)
+     LUT3:I2->O            2   0.704   0.482  clk_filter_0/D4159 (clk_filter_0/D4159)
+     LUT3:I2->O            1   0.704   0.000  clk_filter_0/D4170 (clk_filter_0/D4)
+     LD:D                      0.308          clk_filter_0/dl1/t
     ----------------------------------------
-    Total                     13.446ns (7.479ns logic, 5.967ns route)
-                                       (55.6% logic, 44.4% route)
+    Total                     11.704ns (6.071ns logic, 5.633ns route)
+                                       (51.9% logic, 48.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'FiftyMHzTO1500Hz/CLK2'
@@ -833,15 +860,15 @@ Offset:              7.505ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 17.26 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 19.36 secs
  
 --> 
 
 
-Total memory usage is 520480 kilobytes
+Total memory usage is 521608 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 
